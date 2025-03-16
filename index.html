@@ -1,34 +1,180 @@
 <!DOCTYPE html>
 <html lang="ko-KR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>UI 프로젝트 - CSS</title>
-    <link rel="icon" href="/vite.svg" />
-    <link rel="preload" as="font" href="/public/assets/fonts/pretendard/woff2/PretendardVariable.woff2" crossorigin="anonymous" /> 
-    
-    <link rel="stylesheet" as="style" href="/public/assets/fonts/pretendard/pretendardvariable.css" />
-    <link rel="stylesheet" as="style" href="/public/assets/fonts/newbery/newbery.css" />
-    <link rel="stylesheet" as="style" href="/public/assets/fonts/gastromond/gastromond.css" />
-    <link rel="stylesheet" as="style" href="/public/assets/fonts/adelle/adelle.css" />
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>EagleSource Page</title>
+	<link rel="icon" href="/vite.svg"/>
 
-		<script type="module" src="/src/main.js"></script>
-  </head>
-  <body class="font-(family-name:--newbery) font-bold">
-    <ul
-    class="border-1 border-gray-300 m-4 p-4 min-w-[300px] flex flex-col gap-4">
-    <li class="hover:text-blue-400 hover:font-semibold">
-      <a href="./src/components/main-header.html">헤더컴포넌트</a>
-    </li>
-    <li class="hover:text-blue-400 hover:font-semibold">
-      <a href="./src/components/main-banner.html">배너컴포넌트</a>
-    </li>
-    <li class="hover:text-blue-400 hover:font-semibold">
-      <a href="./src/components/main-bottle.html">소스컴포넌트</a>
-    </li>
-    <li class="hover:text-blue-400 hover:font-semibold">
-      <a href="./src/components/main-footer.html">푸터컴포넌트</a>
-    </li>
-  </ul>
-  </body>
-</html> 
+	<link rel="preload" as="font" href="/public/assets/fonts/pretendard/woff2/PretendardVariable.woff2" crossorigin="anonymous"/>
+
+	<link rel="stylesheet" as="style" href="/public/assets/fonts/pretendard/pretendardvariable.css"/>
+	<link rel="stylesheet" as="style" href="/public/assets/fonts/newbery/newbery.css"/>
+	<link rel="stylesheet" as="style" href="/public/assets/fonts/gastromond/gastromond.css"/>
+	<link rel="stylesheet" as="style" href="/public/assets/fonts/adelle/adelle.css"/>
+
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+	<script type="module" src="/src/main.js"></script>
+</head>
+<body>
+
+
+
+<div id="main_wrap">
+	<div class="top_banner">
+		<a href="/">
+			<span class="font-newbery">[COUPON]</span><p>카카오 채널 추가 시 무료배송 쿠폰 지급</p>
+		</a>
+	</div>
+	<header id="header" class="">
+
+		<div class="header_inner">
+			<div id="logo">
+				<img class="logo" src="./public/assets/images/logo.png" alt="HOTN'THINGS">
+				<img class="logo_scroll" src="./public/assets/images/logo-scroll.png" alt="HOTN'THINGS">
+			</div>
+
+			<button class="m_gnb_btn"><span><i>mobile gnb btn</i></span></button>
+			<button class="search_btn"><i class="material-symbols-outlined">search</i></button>
+			<button class="cart_btn"><i class="material-symbols-outlined">shopping_cart</i></button>
+
+			<nav id="nav" class="font-newbery">
+				<div class="nav_inner">
+					<ul class="deps_1">
+						<li>
+							<a href="/">ABOUT</a>
+							<div class="deps_2_wrap">
+								<ul class="deps_2">
+									<li><a href="/">OUR BRAND</a></li>
+									<li><a href="/">INQUIRY</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="shop_li">
+							<a href="/">SHOP</a>
+							<div class="deps_2_wrap">
+								<ul class="deps_2">
+									<li>
+										<a href="/">ALL PRODUCTS</a>
+										<p class="product_info font-sans">한 입으로 당신의 매 순간에 특별함을 더해주는 하랜띵스</p>
+									</li>
+									<li>
+										<a href="/">PYOGORUFFLE</a>
+										<p class="product_info font-sans">트러플 풍미와 표고의 감칠맛, 화이트와인식초의 산뜻함이 결합된 고급스러운 매운맛</p>
+										<i class="arrow_right material-symbols-outlined">trending_flat</i>
+										<img class="product_image" src="./public/assets/images/pyogo-snb.png" alt="">
+									</li>
+									<li>
+										<a href="/">PARMESAN GOCHUJANG</a>
+										<p class="product_info font-sans">트러플 풍미와 표고의 감칠맛, 화이트와인식초의 산뜻함이 결합된 고급스러운 매운맛</p>
+										<i class="arrow_right material-symbols-outlined">trending_flat</i>
+										<img class="product_image" src="./public/assets/images/parmesan-snb.png" alt="">
+									</li>
+									<li>
+										<a href="/">XO SHRIMP</a>
+										<p class="product_info font-sans">청양고추를 넣은 알싸한 간장 베이스에 새우로 감칠맛을 끌어올린 단짠 매력</p>
+										<i class="arrow_right material-symbols-outlined">trending_flat</i>
+										<img class="product_image" src="./public/assets/images/shrimp-snb.png" alt="">
+									</li>
+									<li>
+										<a href="/">HOTN'THINGS KIT</a>
+										<p class="product_info font-sans">일상에 미슐랭급 풍미를 선사할 하랜띵스의 대표 소스 3종 세트</p>
+										<i class="arrow_right material-symbols-outlined">trending_flat</i>
+										<img class="product_image" src="./public/assets/images/set-snb.png" alt="">
+									</li>
+								</ul>
+
+								<p class="shop_info">
+									HOTN'THINGS exists to spread the concept of 'HOT' around the world.<br>
+									This 'HOT' is not only the realm of the taste sense, but it is also the realm<br>
+									of the sixth sense that is somehow fun and exciting.<br>
+									Experience the thrill of everyday life created by HOTN’THINGS!
+								</p>
+
+								<div class="shop_image">
+									<img src="./public/assets/images/napoli-li.jpg" alt="나폴리 맛피아">
+									<img src="./public/assets/images/shop-all2.webp" alt="핫소스">
+								</div>
+							</div>
+						</li>
+						<li>
+							<a href="/">COMMUNITY</a>
+							<div class="deps_2_wrap">
+								<ul class="deps_2">
+									<li><a href="/">EVENT</a></li>
+									<li><a href="/">REVIEW</a></li>
+									<li><a href="/">RECIPES & PARING</a></li>
+									<li><a href="/">NAPOLI MATFIA</a></li>
+									<li><a href="/">FAQ</a></li>
+									<li><a href="/">1:1 Q&A</a></li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+
+					<ul class="utility_menu">
+						<li class="search_li"><a href="">SEARCH</a></li>
+						<li class="cart_li"><a href="">CART</a></li>
+						<li class="joinlogin_li"><a href="">JOIN/LOGIN</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</header>
+
+	<div id="search_wrap">
+		<span class="close_btn">close btn</span>
+
+		<form id="search_form" action="" method="get" target="_self">
+			<input type="search" name="" id="" placeholder="맛있는 소스 검색하기">
+			<button type="submit" class="search_btn"></button>
+		</form>
+		<ul class="keyword_list">
+			<li><a href="">PYOGORUFFLE</a></li>
+			<li><a href="">PARMESAN GOCHUJANG</a></li>
+			<li><a href="">XO SHRIMP</a></li>
+			<li><a href="">HOTN'THINGS KIT</a></li>
+		</ul>
+	</div>
+
+
+	<div class="container">
+		<section class="photo_frame">
+
+		</section>
+
+		<section class="showcase_wrap">
+
+		</section>
+	</div>
+
+
+	<footer id="footer">
+		<div class="footer_inner">
+			<div class="f_logo">
+				<a href="/" class="">
+					<img src="/public/assets/images/logo.png" alt="HOTN'THINGS" />
+				</a>
+			</div>
+			<div class="f_cs">
+				<p>채팅상담 운영 | 1522-1874</p>
+				<p>Mon-Fri 10:00 - 17:00 (Lunch: pm 12:20 - 13:30)
+				<p>Sat &amp; Sun, Holiday off</p>
+			</div>
+			<ul class="f_menu">
+				<li><a href="">제휴 파트너 문의</a></li>
+				<li><a href="">채팅상담</a></li>
+				<li><a href="">도움말</a></li>
+				<li><a href="">브랜드 소개</a></li>
+			</ul>
+			<div class="f_info">
+				(주)티엠스마일ㅣ대표자명 이준호ㅣ04779 202호 서울특별시 성동구 상원1길 5 (성수동1가)<br>
+				사업자등록번호 172-87-01834 | 통신판매업 신고번호 2024-서울성동-1329<br>
+				개인정보보호책임자 : 김수민ㅣ <a href="/member/agreement.html">이용약관</a> ㅣ <a href="/member/privacy.html">개인정보처리방침</a>
+			</div>
+		</div>
+	</footer>
+
+</div>
+</body>
+</html>
