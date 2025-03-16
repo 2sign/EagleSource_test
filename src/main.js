@@ -51,34 +51,34 @@ $(function(){
 
 	//[pc] header - nav hover
 	function header_h_fnc(){
-		let deps_1_li = $("#nav ul.deps_1 > li");
 		let header = $("#header");
+		let deps_1_li = $("#nav ul.deps_1 > li");
 		let window_w = $(window).width();
 
 		deps_1_li.off("mouseenter mouseleave");
+		header.css("height", "auto");
 
 		if(window_w >= 1024){
-			header.css("height", "75px");
-
 			deps_1_li.each(function() {
-				$(this).find(".deps_2_wrap").each(function() {
-					let header_h = header.outerHeight();
-					let deps_2_h = $(this).innerHeight();
+				let header_h = header.outerHeight();
+				let deps_2_h = $(this).find(".deps_2_wrap").outerHeight();
 
-					$(this).parents("li").on({
-						"mouseenter" : function(){
-							header.addClass("hover");
+				$(this).on({
+					"mouseenter" : function(e){
+						header.addClass("hover");
+
+						if($(this).find(".deps_2_wrap").length > 0){
 							header.css("height", header_h + deps_2_h + 30);
-						},
-						"mouseleave" : function(){
-							header.removeClass("hover");
+						}else{
 							header.css("height", header_h);
 						}
-					})
-				});
+					},
+					"mouseleave" : function(){
+						header.removeClass("hover");
+						header.css("height", header_h);
+					}
+				})
 			});
-		}else{
-			header.css("height", "52px");
 		}
 	}
 	header_h_fnc();
