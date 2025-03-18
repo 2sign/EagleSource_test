@@ -2,6 +2,7 @@ import "./style.css";
 import "../public/js/jquery-3.7.1.min.js"
 
 
+//photo frame slide
 var mainSwiper = new Swiper("#photo_frame_sld", {
 	spaceBetween: 0,
 	centeredSlides: true,
