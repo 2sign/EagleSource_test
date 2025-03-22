@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
-@theme {
+@theme{
 	--font-sans:"Pretendard Variable", sans-serif;
 	--font-adelle:"adelle-sans", sans-serif;
 	--font-newbery:"newbery-sans-pro", sans-serif;
-	--font-gastro:gastromond, sans-serif;
+	--font-gastro:"gastromond", sans-serif;
 	
 	/* 색상 */
 	--color-hot-brand:#ee2523;
@@ -13,25 +13,79 @@
 	--color-hot-brown:#370e06;
 	--color-hot-gray100:#ccc;
 	--color-hot-gray200:#221e1f;
+	--color-hot-gray300:rgba(36, 36, 36, 0.6);
+	--color-hot-gray400:#616161;
 	
 	/* 폰트사이즈 */
-	--text-11:.6875rem;
-	--text-12:.75rem;
-	--text-13:.8125rem;
-	--text-14:.875rem;
-	--text-15:.9375rem;
 	--text-11:0.6875rem;
+	--text-12:0.75rem;
 	--text-13:0.8125rem;
+	--text-14:0.875rem;
 	--text-15:0.9375rem;
 	--text-16:1rem;
+	--text-17:1.0625rem;
+	--text-18:1.125rem;
+	--text-20:1.25rem;
+	--text-25:1.5625rem;
+	--text-26:1.625rem;
+	--text-30:1.875rem;
+	--text-33:2.0625rem;
+	--text-35:2.1875rem;
+	--text-45:2.8125rem;
+	--text-50:3.125rem;
+	--text-85:5.3125rem;
 	
-	--pattern-bg:url("/public/assets/images/pattern.png") repeat top / 5%;
-	--rolltxt-bg:url("/public/assets/rolltxt1.png") repeat-x center / contain;
+	/* 이미지설정 */
+	--pattern-bg:url("/public/assets/images/pattern.png");
+	--wood-bg:url("/public/assets/images/wood-frame2.jpg");
+	--ourbrand-bg01:url("/public/assets/images/main.jpg");
+	--ourbrand-bg02:url("/public/assets/images/sec2-main.jpg");
+	--review-bg01:url("/public/assets/images/main02.jpg");
+	--symbol-bg:url("/public/assets/images/sec10-bg.jpg");
+	
+	/* 애니메이션 */
+	@keyframes cardrolling{
+		0%{transform:translateX(0);}
+		100%{transform:translateX(-50%);}
+	}
+	--animate-cardrolling:cardrolling 40s linear infinite;
+	--review:repeat(auto-fit, minmax(700px, 1fr));
+	
+	@keyframes bounce{
+		0%, 100%{transform:translateY(0);}
+		50%{transform:translateY(-10px);}
+	}
+	--animate-bounce-1:bounce 2s ease-in-out 0.2s infinite forwards;
+	--animate-bounce-2:bounce 3s ease-in-out 0.4s infinite forwards;
+	--animate-bounce-3:bounce 2.5s ease-in-out 0.2s infinite forwards;
+}
+
+@layer components{
+	.max-container{
+		@apply max-w-[1920px] mx-auto;
+	}
+}
+
+.roll-wrap{
+	animation: rolling 20s linear infinite;
+	
+	&:before{
+		content:"HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS •HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS •HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • HOT'N THINGS • ";
+		font-size:1rem;
+		letter-spacing:1px;
+		padding-right:1.25rem;
+	}
+}
+
+@keyframes rolling{
+	0%{transform:translateX(0);}
+	100%{transform:translateX(-100%);}
 }
 
 
 
 
+/* -- custom css -- */
 
 :root{
 	--color-hot-brand:#ee2523;
@@ -429,6 +483,12 @@ body{
 		padding-top:110px;
 	}
 }
+.scroll #container{
+	padding-top:52px;
+	@media (min-width:1024px){
+		padding-top:77px;
+	}
+}
 /* container end */
 
 
@@ -445,14 +505,13 @@ body{
 		background-size:12%;
 		
 		@media (min-width:1024px){
-			padding-top:110px;
 			background-size:5%;
 		}
 	}
 	
 	/* section - photo frame start */
 	.photo_frame_wrap{
-		padding:7px 0 20px;
+		padding:20px 0;
 		
 		@media (min-width:1024px){
 			padding:50px 0;
@@ -473,8 +532,8 @@ body{
 				cursor:pointer;display:block;
 				position:absolute;top:50%;transform:translateY(-50%);width:40px;
 				
-				&[type="prev"]{left:-40px;}
-				&[type="next"]{right:-40px;}
+				&[data-type="prev"]{left:-40px;}
+				&[data-type="next"]{right:-40px;}
 			}
 		}
 	}
@@ -588,11 +647,6 @@ body{
 
 
 /* [community - napolimatfia] start */
-@keyframes tag_bounce{
-	0%{transform:translateY(0px);}
-	50%{transform:translateY(-5px);}
-	100%{transform:translateY(0px);}
-}
 #napolimatfia_wrap{
 	.inner{
 		position:relative;width:calc(100% - 32px);margin:0 auto;
@@ -695,7 +749,7 @@ body{
 			position:relative;margin-top:20px;
 			li{
 				display:inline-block;margin:2px;
-				animation:tag_bounce ease-in-out infinite forwards;
+				animation:bounce ease-in-out infinite forwards;
 				
 				&:nth-of-type(1){
 					animation-delay:0.2s;animation-duration:2s;
@@ -824,7 +878,7 @@ body{
 		
 		.bounce_img{
 			position:absolute;width:60px;
-			animation:tag_bounce ease-in-out infinite forwards;
+			animation:bounce ease-in-out infinite forwards;
 			
 			@media (min-width:1024px){
 				width:120px;
@@ -913,3 +967,132 @@ body{
 	}
 }
 /* [community - napolimatfia] end */
+
+
+/* [shop - all_products] start */
+#all_products_wrap{
+	.product{
+		width:100%;border-bottom:2px solid black;
+		background-color:var(--color-hot-ivory);
+		
+		@media (min-width:1024px){
+			display:flex;align-items:stretch;
+		}
+	}
+	.left_area{
+		@media (min-width:1024px){
+			width:580px;
+		}
+	}
+	.item_con{
+		position:relative;
+	}
+	.item_icons{
+		z-index:5;position:absolute;top:0;left:0;
+		display:flex;align-items:center;justify-content:space-between;
+		width:100%;padding:12px 16px;
+		.best{
+			height:23px;
+		}
+		.hot{
+			display:none;height:36px;
+		}
+		
+		@media (min-width:1024px){
+			padding:20px 25px;
+			
+			.hot{
+				display:block;
+			}
+		}
+	}
+	.item_img{
+		position:relative;
+		background-image:url("/public/assets/images/PYOGORUFFLE-listbg.jpg");
+		background-repeat:no-repeat;
+		background-position:center;
+		background-size:cover;
+		
+		&:before{
+			z-index:1;position:absolute;top:0;left:0;right:0;bottom:0;
+			content:"";display:block;height:100%;
+			background-color:rgba(0,0,0,0.5);
+		}
+		img{width:100%;max-width:600px;left:50%;transform:translateX(-50%) translateY(20%);}
+		
+		@media (min-width:1024px){
+			background-image:unset;
+			
+			&:before{
+				background-color:rgba(255,249,232,0.85);
+			}
+			img{max-width:520px;transform:translateX(-50%) translateY(11%);}
+		}
+	}
+	a:hover .default{opacity:0;visibility:hidden;}
+	a:hover .move{opacity:1;visibility:visible;}
+	.default{
+		position:relative;z-index:3;
+	}
+	.move{
+		opacity:0;visibility:hidden;
+		z-index:3;position:absolute;top:0;left:0;
+	}
+	
+	.item_info{
+		position:relative;padding:70px 12px 20px;
+		.hot{
+			position:absolute;right:20px;width:50px;
+		}
+		h3{
+			span{display:block;}
+			.ko_name{
+				font-size:15px;font-weight:600;
+			}
+			.en_name{
+				margin-top:5px;font-size:25px;font-weight:600;
+			}
+		}
+		p{
+			margin-top:20px;
+			font-size:14px;font-weight:500;line-height:1.5;word-break:keep-all;
+		}
+		
+		@media (min-width:1024px){
+			padding:70px 30px 30px;
+			.hot{display:none;}
+			p{margin-top:10px;}
+		}
+	}
+	.item_price{
+		margin-top:40px;
+		s{color:#b7b7b7;font-size:15px;font-weight:400;}
+		span{margin-left:10px;font-size:20px;font-weight:600;}
+		
+		@media (min-width:1024px){
+			margin-top:30px;
+		}
+	}
+	a:hover .detail_view_btn{background-color:var(--color-hot-brand);color:white;}
+	.detail_view_btn{
+		margin-top:35px;padding:18px;background-color:black;
+		color:white;font-size:15px;font-weight:600;text-align:center;
+		
+		@media (min-width:1024px){
+			font-size:20px;
+		}
+	}
+	
+	.right_area{
+		display:none;
+
+		@media (min-width:1024px){
+			display:block;width:calc(100% - 580px);
+			background-image:url("/public/assets/images/PYOGORUFFLE-listbg.jpg");
+			background-repeat:no-repeat;
+			background-position:center;
+			background-size:cover;
+		}
+	}
+}
+/* [shop - all_products] end */

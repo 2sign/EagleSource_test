@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>EagleSource Test: ship-all_products</title>
+	<link rel="icon" href="/vite.svg"/>
+
+	<link rel="preload" as="font" href="/public/assets/fonts/pretendard/woff2/PretendardVariable.woff2" crossorigin="anonymous"/>
+
+	<link rel="stylesheet" as="style" href="/public/assets/fonts/pretendard/pretendardvariable.css"/>
+	<link rel="stylesheet" as="style" href="/public/assets/fonts/newbery/newbery.css"/>
+	<link rel="stylesheet" as="style" href="/public/assets/fonts/gastromond/gastromond.css"/>
+	<link rel="stylesheet" as="style" href="/public/assets/fonts/adelle/adelle.css"/>
+
+	<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+	<script type="module" src="/src/js/sub-header.js"></script>
+	<script type="module" src="/src/js/footer.js"></script>
+	<script type="module" src="/src/main.js"></script>
+</head>
+<body>
+
+<sub-header></sub-header>
+
+<div id="all_products_wrap" class="page_wrap">
+	<div id="container">
+
+		<div class="product">
+			<!-- left: DETAIL VIEW -->
+			<div class="left_area">
+				<a href="#void">
+					<div class="item_con">
+						<div class="item_icons">
+							<img class="best" src="/public/assets/images/icon_best.jpg" alt="BEST상품">
+							<img class="hot" src="/public/assets/images/spicy2.png" alt="맵기 다섯칸 중 두칸">
+						</div>
+						<div class="item_img">
+							<img class="default" src="/public/assets/images/product-1.png" alt="PYOGORUFFLE">
+							<img class="move" src="/public/assets/images/product-1.gif" alt="PYOGORUFFLE 회전되는 영상">
+						</div>
+						<div class="item_info">
+							<img class="hot" src="/public/assets/images/spicy2.png" alt="맵기 다섯칸 중 두칸">
+							<h3>
+								<span class="ko_name">표고러플</span>
+								<span class="en_name font-newbery">PYOGORUFFLE</span>
+							</h3>
+							<p>트러플 풍미와 표고의 감칠맛, 화이트와인식초의 산뜻함이 결합된 고급스러운 매운맛</p>
+							<div class="item_price font-newbery">
+								<s>23,000</s><span>19,900</span><span class="text-hot-brand">13%</span>
+							</div>
+							<div class="detail_view_btn font-newbery">DETAIL VIEW</div>
+						</div>
+					</div>
+				</a>
+			</div>
+
+			<!-- right: image -->
+			<div class="right_area"></div>
+		</div>
+
+	</div>
+</div>
+
+<common-footer></common-footer>
